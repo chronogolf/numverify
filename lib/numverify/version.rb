@@ -1,3 +1,3 @@
-module Numverify
-  VERSION = "0.1.0"
+module NumverifyClient
+  VERSION = '0.1.0'.freeze
 end
