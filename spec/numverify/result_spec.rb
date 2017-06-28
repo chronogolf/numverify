@@ -52,7 +52,7 @@ module NumverifyClient
 
     def build_test_query
       {
-        number: 4158586273,
+        number: 4_158_586_273,
         country_code: 'US',
         access_key: 'test_access_key'
       }
