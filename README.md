@@ -1,8 +1,6 @@
-# Numverify
+# Numverify API Client
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/numverify`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem is a non-official Ruby Client for Numverify API service.
 
 ## Installation
 
@@ -22,7 +20,46 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+#### Requirments
+
+In order to use the client with your Numverify account I'll need to specify you `ACCESS_KEY`
+This can be done on the fly like:
+```ruby
+NumverifyClient.validate(... access_key: 'YOUR_ACCESS_KEY')
+```
+Or more permanently by using the environment variable
+```ruby
+ENV['NUMVERIFY_ACCESS_KEY']
+```
+
+#### Number Validation:
+
+To validate a phone number just use the `validate` method like:
+```ruby
+NumverifyClient.validate(number: '4158586273')
+```
+Optionally, you can also specify the country code:
+```ruby
+NumverifyClient.validate(number: '4158586273', country_code: 'US')
+```
+This will return the API response as a `NumverifyClient::Result` object.
+
+## Error handling
+
+Here is the list of every error managed by the gem:
+
+|API error code|Error class name           |
+|:-------------|---------------------------|
+|404           |NotFoundError              |
+|101           |InvalidAccessKeyError      |
+|103           |InvalidApiFunctionError    |
+|210           |NoPhoneNumberError         |
+|211           |NonNumericPhoneNumberError |
+|310           |InvalidCountryCodeError    |
+|104           |UsageLimitError            |
+|105           |HttpsAccessRestrictionError|
+|102           |InactiveUserError          |
+|Other         |APIError                   |
 
 ## Development
 
@@ -32,7 +69,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/numverify.
+Bug reports and pull requests are welcome on GitHub at https://github.com/chronogolf/numverify.
 
 
 ## License
