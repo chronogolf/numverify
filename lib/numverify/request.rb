@@ -4,6 +4,7 @@ require 'numverify/errors/https_access_restriction_error'
 require 'numverify/errors/inactive_user_error'
 require 'numverify/errors/invalid_access_key_error'
 require 'numverify/errors/invalid_api_function_error'
+require 'numverify/errors/invalid_country_code_error'
 require 'numverify/errors/no_phone_number_error'
 require 'numverify/errors/non_numeric_phone_number_error'
 require 'numverify/errors/not_found_error'
@@ -36,6 +37,8 @@ module NumverifyClient
 
     def handle_error(error)
       case error['code']
+      when 404
+        raise NotFoundError, error['info']
       when 101
         raise InvalidAccessKeyError, error['info']
       when 103
