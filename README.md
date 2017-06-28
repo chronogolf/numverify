@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/chronogolf/numverify/tree/master.svg?style=shield&circle-token=a035ff061b42aa7812b0db6e744f2168a2f6eb13)](https://circleci.com/gh/chronogolf/numverify/tree/master) [![Code Climate](https://codeclimate.com/github/chronogolf/numverify/badges/gpa.svg)](https://codeclimate.com/github/chronogolf/numverify) [![Gem Version](https://badge.fury.io/rb/numverify.svg)](https://badge.fury.io/rb/numverify)
+
 # Numverify API Client
 
 This gem is a non-official Ruby Client for Numverify API service.
