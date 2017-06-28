@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://apilayer.net/api/validate?access_key=test_access_key&country_code=US&number
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.45.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 28 Jun 2017 17:49:34 GMT
+      Content-Type:
+      - application/json; Charset=UTF-8
+      Connection:
+      - keep-alive
+      X-Apilayer-Transaction-Id:
+      - 61a8acd4-4319-43dd-8899-d40288b63560
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Time:
+      - '0.008'
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"error":{"code":210,"type":"no_phone_number_provided","info":"Please
+        specify a phone number. [Example: 14158586273]"}}'
+    http_version:
+  recorded_at: Wed, 28 Jun 2017 17:49:34 GMT
+recorded_with: VCR 3.0.3

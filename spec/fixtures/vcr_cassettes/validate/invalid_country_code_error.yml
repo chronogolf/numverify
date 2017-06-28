@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://apilayer.net/api/validate?access_key=test_access_key&country_code=ABCD&number=4158586273
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.45.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 28 Jun 2017 17:47:51 GMT
+      Content-Type:
+      - application/json; Charset=UTF-8
+      Connection:
+      - keep-alive
+      X-Apilayer-Transaction-Id:
+      - 92bab842-2b1c-498d-95db-8cc4ffd2ab3b
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Time:
+      - '0.010'
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"error":{"code":310,"type":"invalid_country_code","info":"You
+        have specified an invalid Country Code [Required format: 2-letter Code] [Example:
+        GB]"}}'
+    http_version:
+  recorded_at: Wed, 28 Jun 2017 17:47:51 GMT
+recorded_with: VCR 3.0.3

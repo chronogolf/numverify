@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://apilayer.net/api/validate?access_key=test_access_key&country_code=US&number=4158586273
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.45.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 28 Jun 2017 16:07:26 GMT
+      Content-Type:
+      - application/json; Charset=UTF-8
+      Connection:
+      - keep-alive
+      X-Apilayer-Transaction-Id:
+      - e6b82e44-36b0-475f-9884-ad41259ac1e2
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Time:
+      - '0.002'
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"error":{"code":102,"type":"inactive_user","info":""}}'
+    http_version:
+  recorded_at: Wed, 28 Jun 2017 16:07:26 GMT
+recorded_with: VCR 3.0.3

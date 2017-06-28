@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://apilayer.net/api/validate?access_key=test_access_key&country_code=US&number=4158586273
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.45.4
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 28 Jun 2017 16:02:56 GMT
+      Content-Type:
+      - application/json; Charset=UTF-8
+      Connection:
+      - keep-alive
+      X-Apilayer-Transaction-Id:
+      - 32901cee-e794-47c8-9516-2c13513fdb18
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Time:
+      - '0.016'
+    body:
+      encoding: UTF-8
+      string: '{"valid":true,"number":"14158586273","local_format":"4158586273","international_format":"+14158586273","country_prefix":"+1","country_code":"US","country_name":"United
+        States of America","location":"Novato","carrier":"AT&T Mobility LLC","line_type":"mobile"}'
+    http_version:
+  recorded_at: Wed, 28 Jun 2017 16:02:56 GMT
+recorded_with: VCR 3.0.3
