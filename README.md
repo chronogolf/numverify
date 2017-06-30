@@ -22,17 +22,28 @@ Or install it yourself as:
 
 ## Usage
 
-#### Requirments
+#### Requirements
 
 In order to use the client with your Numverify account I'll need to specify you `ACCESS_KEY`
-This can be done on the fly like:
+This can be done through an initializer like:
 ```ruby
-NumverifyClient.validate(... access_key: 'YOUR_ACCESS_KEY')
+NumverifyClient.configure do |config|
+  config.access_key = NUMVERIFY_ACCESS_KEY
+end
 ```
 Or more permanently by using the environment variable
 ```ruby
 ENV['NUMVERIFY_ACCESS_KEY']
 ```
+
+_*Optional*_:  You can also choose to use the service through `https`:
+```ruby
+NumverifyClient.configure do |config|
+  ...
+  config.https = true
+end
+```
+
 
 #### Number Validation:
 
