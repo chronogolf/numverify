@@ -14,8 +14,8 @@ require 'uri'
 
 module NumverifyClient
   class Request
-    def initialize(query = {})
-      @base_uri   = 'http://apilayer.net'
+    def initialize(query: {}, https: false)
+      @base_uri   = "#{protocol(https)}://apilayer.net"
       @query      = query
       @path       = '/api/validate'
       @connection = Excon.new(@base_uri)
@@ -34,6 +34,10 @@ module NumverifyClient
     end
 
     private
+
+    def protocol(use_https)
+      use_https ? 'https' : 'http'
+    end
 
     def handle_error(error)
       case error['code']

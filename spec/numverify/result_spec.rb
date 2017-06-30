@@ -4,7 +4,7 @@ module NumverifyClient
   describe Result do
     let(:response) do
       VCR.use_cassette('validate/valid_request') do
-        NumverifyClient::Request.new(build_test_query).perform(method: :get)
+        NumverifyClient::Request.new(query: build_test_query).perform(method: :get)
       end
     end
 
