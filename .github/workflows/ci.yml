@@ -1,28 +1,29 @@
 name: CI
   on: [push]
-  jobs:
-   tests:
-     runs-on: ubuntu-18.04
-     strategy:
-       matrix:
-         ruby: [2.6]
 
-     steps:
-     - uses: actions/checkout@master
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby: [2.6]
 
-     - name: Sets up the Ruby version
-       uses: actions/setup-ruby@v1
-       with:
-         ruby-version: ${{ matrix.ruby }}
+    steps:
+    - uses: actions/checkout@master
 
-     - name: Sets up the environment
-       run: |
-         sudo apt-get install libsqlite3-dev
-         gem install -q bundler
-         bundle install
+    - name: Sets up the Ruby version
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby }}
 
-     - name: Runs Rubocop
-       run: rubocop
+    - name: Sets up the environment
+      run: |
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+        bundle install
 
-     - name: Runs tests
-       run: rspec
+    - name: Runs Rubocop
+      run: rubocop
+
+    - name: Runs tests
+      run: rspec
