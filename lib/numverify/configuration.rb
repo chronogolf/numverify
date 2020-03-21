@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module NumverifyClient
   class Configuration
     attr_accessor :access_key, :https

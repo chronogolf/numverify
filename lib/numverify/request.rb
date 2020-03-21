@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'numverify/errors/numverify_client_error'
 require 'numverify/errors/api_error'
 require 'numverify/errors/https_access_restriction_error'
